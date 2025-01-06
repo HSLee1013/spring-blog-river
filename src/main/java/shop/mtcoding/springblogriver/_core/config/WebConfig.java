@@ -20,6 +20,17 @@ public class WebConfig implements WebMvcConfigurer {
     @Value("${file.path}")
     private String filePath;
 
+//    @Override
+//    public void addCorsMappings(CorsRegistry registry) {
+//        registry.addMapping("/**")
+//                .allowedOriginPatterns("*") // 모든 포트를 허용
+//                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+//                .allowedHeaders("Authorization", "Content-Type", "X-PINGOTHER", "X-KEY")
+//                .exposedHeaders("Authorization")
+//                .allowCredentials(true) // 인증 정보 허용
+//                .maxAge(3600);
+//    }
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         WebMvcConfigurer.super.addResourceHandlers(registry);
@@ -32,17 +43,6 @@ public class WebConfig implements WebMvcConfigurer {
                 .setCachePeriod(60 * 60) // 초 단위 => 한시간
                 .resourceChain(true)
                 .addResolver(new PathResourceResolver());
-    }
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOriginPatterns("http://localhost:*") // 모든 포트를 허용
-                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                .allowedHeaders("Authorization", "Content-Type")
-                .exposedHeaders("Authorization")
-                .allowCredentials(true) // 인증 정보 허용
-                .maxAge(3600);
     }
 
     @Override

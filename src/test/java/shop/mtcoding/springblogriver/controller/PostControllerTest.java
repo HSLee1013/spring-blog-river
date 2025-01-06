@@ -47,7 +47,6 @@ public class PostControllerTest extends MyWithRestDoc {
         accessToken = "Bearer "+accessToken;
     }
 
-
     @Test
     public void find_all_test() throws Exception {
         ResultActions resultActions = mvc.perform(

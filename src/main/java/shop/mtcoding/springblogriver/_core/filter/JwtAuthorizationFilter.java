@@ -1,4 +1,4 @@
-package shop.mtcoding.springblogriver._core.auth;
+package shop.mtcoding.springblogriver._core.filter;
 
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
@@ -8,16 +8,18 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
+import shop.mtcoding.springblogriver._core.auth.JwtEnum;
+import shop.mtcoding.springblogriver._core.auth.JwtUtil;
 import shop.mtcoding.springblogriver._core.error.exception.Exception401;
 import shop.mtcoding.springblogriver.user.User;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@RequiredArgsConstructor
+
 public class JwtAuthorizationFilter implements Filter {
+
 
     // API 요청마다 동작
     @Override
