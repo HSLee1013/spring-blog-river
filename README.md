@@ -1,4 +1,4 @@
-`# 스프링 riverpod server
+# 스프링 riverpod server
 
 ## 1. base64 사진 전송
 - data:image/jpeg;base64,
