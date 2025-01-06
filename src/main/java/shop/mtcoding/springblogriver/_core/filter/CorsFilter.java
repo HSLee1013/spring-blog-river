@@ -23,6 +23,8 @@ public class CorsFilter implements Filter {
         response.setHeader("Access-Control-Max-Age", "3600");
         response.setHeader("Access-Control-Allow-Headers", "Origin, X-Key, Content-Type,  Authorization");
         response.setHeader("Access-Control-Allow-Credentials", "true");
+        // Credentials가 true여야 Authorization을 보낼 수 있다.
+        // Credentails가 true가 되면 *가 허용되지 않는다.
 
         // Preflight 요청을 허용하고 바로 응답하는 코드
         if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
